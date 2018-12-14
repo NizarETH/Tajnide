@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bageLighter">
+    <LinearLayout
+        android:id="@+id/open_gmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_margin="6dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+
+            android:text="Pour contacter le Développeur de l'application :"/>
+        <ImageView
+            android:layout_width="65dp"
+            android:layout_height="55dp"
+            android:src="@drawable/gmail"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/call_pub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_margin="6dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:textColor="@android:color/black"
+            android:text="Pour supporter l'application, veuillez cliquer sur la publicité !"/>
+        <ImageView
+            android:layout_width="65dp"
+            android:layout_height="55dp"
+            android:rotation="90"
+            android:src="@drawable/ic_trending_flat_black_48dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:text="Pub"/>
+    </LinearLayout>
+</LinearLayout>

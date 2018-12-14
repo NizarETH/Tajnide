@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#d4d1ab</color>
+    <color name="colorPrimaryDark">#a29d53</color>
+    <color name="colorAccent">#a29d53</color>
+    <color name="pokerGreen">#35654d</color>
+    <color name="pokerGreenLighter">#427e60</color>
+    <color name="pokerGreenDarker">#2a513e</color>
+    <color name="bage">#bab678</color>
+    <color name="bageDarker">#a29d53</color>
+    <color name="bageLighter">#d4d1ab</color>
+</resources>

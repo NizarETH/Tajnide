@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "167828662004",
+    "firebase_url": "https://secret-box-a9ffd.firebaseio.com",
+    "project_id": "secret-box-a9ffd",
+    "storage_bucket": "secret-box-a9ffd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:167828662004:android:168cc2ddd398af8f",
+        "android_client_info": {
+          "package_name": "com.secret.box.tajnide"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "167828662004-gujeijdt15aod7tra2cin1slfsmavjc7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKtGIJ-BkBZCeqV6SVqPrRl-VFibMwuno"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

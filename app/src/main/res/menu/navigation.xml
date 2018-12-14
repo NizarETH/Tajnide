@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_work"
+        android:icon="@drawable/ic_work_black_36dp"
+        android:title="الخدمة" />
+
+    <item
+        android:id="@+id/navigation_law"
+        android:icon="@drawable/ic_gavel_black_36dp"
+        android:title="القانون" />
+
+    <item
+        android:id="@+id/navigation_date"
+        android:icon="@drawable/ic_watch_later_black_36dp"
+        android:title="التاريخ" />
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home_black_36dp"
+        android:title="الاعفاء" />
+    <item
+        android:id="@+id/navigation_contact"
+        android:icon="@drawable/contact"
+        android:title="الاتصال" />
+
+</menu>

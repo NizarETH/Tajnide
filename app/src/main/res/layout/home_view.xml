@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@color/bageLighter"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="center"
+                android:text=" الإعفاء من التجنيد في المغرب"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:src="@drawable/far_maroc_armee_638665771" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="right"
+
+                android:text="أسباب الإعفاءات خاصة في العجز البدني أو الصحي الذي يكون مثبتا بتقرير طبي صادر عن مصالح التكوين الاستشفائية العمومية المختصة، أو التحمل العائلي أو الزواج بالنسبة للمرأة أو وجود أطفال تحت حضانتها أو كفالتها، أو متابعة الدراسة، وجود أخ او أخت في الخدمة باعتباره مجندا أو يعيشون في بيت واحد والذين قد تتم دعوتهم في نفس الوقت للخدمة."
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="right"
+
+                android:text="كما يعفى من الخدمة أعضاء الحكومة والبرلمان، بعض فئات موظفي ومستخدمي الدولة والجماعات الترابية والمؤسسات والمقاولات العمومية، الذين تقتضي المصلحة الاحتفاظ بهم في منصبهم، وتحدد لائحة هذه الفئات بنص تنظيمي."
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="right"
+
+                android:text="وحسب المادة 2 من هذا النص، يستثنى من الخدمة العسكرية الأشخاص الذين حكم عليهم بعقوبة جنائية أو بالسجن النافذ لمدة تزيد عن ستة أشهر، ما لم يحصلوا على إعادة الاعتبار."
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="right"
+
+                android:text="أما الأشخاص الذين تزيد أعمارهم عن 25 سنة والذين استفادوا من الإعفاء
+لأحد الأسباب المنصوص عليها في المادة الأولى. يمكن استدعاؤهم لأداء خدمتهم العسكرية حتى سن 40،
+                 في حالة انتفاء أسباب الإعفاء."
+                android:textColor="@android:color/black" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="180dp"/>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

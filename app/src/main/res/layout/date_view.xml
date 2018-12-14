@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@color/bageLighter"
+    android:orientation="vertical">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_margin="5dp"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:text=" بداية التجنيد في المغرب"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:src="@drawable/pic_soldat"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="right"
+
+                android:textColor="@android:color/black"
+                android:text="التجنيد في المغرب أو الخدمة العسكرية في المغرب هو تجنيد إجباري للرجال المواطنين في المغرب من سن الثامنة عشر جرى إحداثه خلال حالة الاستثناء التي شهدها المغرب إبان حكم الملك الحسن الثاني بموجب مرسوم ملكي لسنة
+ .1966"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="right"
+
+                android:textColor="@android:color/black"
+                android:text=" والخاص بتنظيم الخدمة العسكرية باستثناءات واسعة وتأجيلات مؤقتة لحالات العجز البدني أو التحمل العائلي أو متابعة الدراسة إلى جانب حالات أخرى
+         وتمتد فترة التجنيد 18 شهرا قبل أن يتم إلغاؤه في المغرب سنة 2006
+   من طرف حكومة المغرب 2002-2007 بقيادة إدريس جطو بناء على تعليمات ملكية"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="180dp"/>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
