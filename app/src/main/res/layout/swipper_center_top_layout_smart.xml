@@ -2,24 +2,22 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="@color/bageLighter"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
 
     android:orientation="vertical">
+
 
     <android.support.v4.view.ViewPager
 
         android:id="@+id/viewPager"
+
         android:layout_width="match_parent"
-        android:layout_height="350dp"
+        android:layout_height="220dp"
         android:layout_marginBottom="3dp"
         android:paddingBottom="3dp">
 
     </android.support.v4.view.ViewPager>
-    <LinearLayout
 
-        android:layout_below="@id/viewPager"
-        android:layout_width="match_parent"
-        android:layout_height="250dp"/>
     <LinearLayout
 
         android:id="@+id/layoutDots"
@@ -28,5 +26,46 @@
         android:layout_below="@id/viewPager"
         android:gravity="center"
         android:orientation="horizontal"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@id/layoutDots">
+        <LinearLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_marginTop="8dp"
+            android:layout_height="180dp"
+            android:orientation="vertical" >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="center"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:textColor="@color/pokerGreen"
+                android:text="مرحبا بكم في اول تطبيق للتجنيد الاجباري في المغرب."/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="center"
+                android:textSize="14sp"
+                android:textStyle="normal"
+                android:textColor="@color/pokerGreen"
+                android:text="يحتوي هذا التطبيق على جميع
+ الاخبار والتساؤلات و الاستفسارات"/>
+            <ImageView
+                android:layout_marginTop="6dp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="110dp"
+                android:src="@drawable/ic_launcher_round"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+
 
 </RelativeLayout>

@@ -9,6 +9,7 @@ import android.support.v7.app.ActionBar;
 import android.arch.lifecycle.ViewModelProviders;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 
 import com.crashlytics.android.Crashlytics;
@@ -18,6 +19,9 @@ import com.google.android.gms.ads.reward.RewardItem;
 import com.google.android.gms.ads.reward.RewardedVideoAd;
 import com.google.android.gms.ads.reward.RewardedVideoAdListener;
 
+
+import com.google.android.gms.ads.InterstitialAd;
+
 import io.fabric.sdk.android.Fabric;
 
 public class MainActivity extends AppCompatActivity implements RewardedVideoAdListener {
@@ -25,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements RewardedVideoAdLi
     private DataViewModel mViewModel;
     private ActionBar toolbar;
     private RewardedVideoAd mRewardedVideoAd;
+    private InterstitialAd mInterstitialAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,14 +58,50 @@ public class MainActivity extends AppCompatActivity implements RewardedVideoAdLi
         mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(this);
         mRewardedVideoAd.setRewardedVideoAdListener(this);
 
+        loadRewardedVideoAd();
+
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-4008954798009206/6958140925");
+
+        mInterstitialAd.loadAd(new AdRequest.Builder().addTestDevice("6B15F49C17E30E253F6AD419AE6C6B0B").build());
 
 
+    }
+    @Override
+    public void onPause() {
+        super.onPause();
+         mRewardedVideoAd.pause(this);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        mRewardedVideoAd.resume(this);
     }
     public void loadRewardedVideoAd() {
 
         if (!mRewardedVideoAd.isLoaded()) {
             mRewardedVideoAd.loadAd("ca-app-pub-4008954798009206/5504322984", new AdRequest.Builder().addTestDevice("6B15F49C17E30E253F6AD419AE6C6B0B").build());
+
         }
+    }
+
+    public void showRewardedVideo() {
+         if (mRewardedVideoAd.isLoaded()) {
+             mRewardedVideoAd.show();
+        }
+    }
+
+    public void loadInterstitialAd()
+    {
+
+        if (mInterstitialAd.isLoaded()) {
+            mInterstitialAd.show();
+        } else {
+            Log.e("TAG", "The interstitial wasn't loaded yet.");
+        }
+
     }
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -92,7 +133,7 @@ public class MainActivity extends AppCompatActivity implements RewardedVideoAdLi
 
                 case R.id.navigation_contact:
                     toolbar.setTitle("الاتصال");
-                    fragment = new ContactِFragment();
+                    fragment = new ContactFragment();
                     loadFragment(fragment);
                     return true;
             }

@@ -9,13 +9,25 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class ContactِFragment extends android.support.v4.app.Fragment {
+public class ContactFragment extends android.support.v4.app.Fragment {
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        if(getActivity() != null)
+        ((MainActivity)getActivity()).loadInterstitialAd();
+    }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.contact_view, container, false);
+
+        if(getActivity() != null)
+        ((MainActivity)getActivity()).loadInterstitialAd();
 
         v.findViewById(R.id.open_gmail).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,7 +42,7 @@ public class ContactِFragment extends android.support.v4.app.Fragment {
             @Override
             public void onClick(View view) {
                 if(getActivity() != null)
-                ((MainActivity)getActivity()).  loadRewardedVideoAd();
+                ((MainActivity)getActivity()).  showRewardedVideo();
             }
         });
 

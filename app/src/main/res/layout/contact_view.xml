@@ -16,7 +16,7 @@
             android:textSize="16sp"
             android:textColor="@android:color/black"
 
-            android:text="Pour contacter le Développeur de l'application :"/>
+            android:text="للاتصال بصاحب التطبيق اضغط على الايقونة"/>
         <ImageView
             android:layout_width="65dp"
             android:layout_height="55dp"
@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:textSize="17sp"
             android:textColor="@android:color/black"
-            android:text="Pour supporter l'application, veuillez cliquer sur la publicité !"/>
+            android:text="لدعم التطبيق المرجو الضغط على الاعلانات"/>
         <ImageView
             android:layout_width="65dp"
             android:layout_height="55dp"

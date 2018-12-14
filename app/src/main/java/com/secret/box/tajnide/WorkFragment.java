@@ -9,8 +9,11 @@ import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +25,7 @@ public class WorkFragment extends android.support.v4.app.Fragment {
     private View view;
 
     private ViewPager mViewPager;
+    private LinearLayout container;
 
     private TextView[] dots;
     private LinearLayout dotsLayout;
@@ -70,6 +74,10 @@ public class WorkFragment extends android.support.v4.app.Fragment {
         final DashBoardAdapter dashBoardAdapter = new DashBoardAdapter((MainActivity)getActivity(), elementSwipes);
         mViewPager.setAdapter(dashBoardAdapter);
         mViewPager.addOnPageChangeListener(viewPagerPageChangeListener);
+
+
+
+
 
         return  view;
     }
