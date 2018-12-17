@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Tajnide</string>
     <string name="splash_title">© 2018 TAJNIDE - Tous droits résérvés</string>
+    <string name="close">Voulez-vous fermer l\\\'application ?</string>
 </resources>

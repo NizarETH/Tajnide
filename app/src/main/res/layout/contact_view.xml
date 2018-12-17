@@ -3,6 +3,30 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bageLighter">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="6dp">
+        <TextView
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="  لائحة المدعوون للالتحاق"/>
+
+        <TextView
+            android:gravity="center"
+           android:layout_margin="5dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text=" سيتم الاعلان قريبا "/>
+    </LinearLayout>
     <LinearLayout
         android:id="@+id/open_gmail"
         android:layout_width="match_parent"
@@ -24,6 +48,7 @@
     </LinearLayout>
     <LinearLayout
         android:id="@+id/call_pub"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -36,8 +61,8 @@
             android:textColor="@android:color/black"
             android:text="لدعم التطبيق المرجو الضغط على الاعلانات"/>
         <ImageView
-            android:layout_width="65dp"
-            android:layout_height="55dp"
+            android:layout_width="55dp"
+            android:layout_height="35dp"
             android:rotation="90"
             android:src="@drawable/ic_trending_flat_black_48dp"/>
         <TextView

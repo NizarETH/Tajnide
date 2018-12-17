@@ -6,6 +6,7 @@
     android:background="@color/bageLighter"
     android:orientation="vertical">
     <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -15,10 +16,14 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:layout_margin="5dp"
+
+                android:visibility="invisible"
+                android:textStyle="bold"
                 android:textSize="16sp"
                 android:textColor="@android:color/black"
                 android:text=" بداية التجنيد في المغرب"/>
@@ -27,6 +32,10 @@
                 android:layout_height="200dp"
                 android:src="@drawable/pic_soldat"/>
             <TextView
+                android:id="@+id/text1"
+
+                android:visibility="invisible"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -36,6 +45,8 @@
                 android:text="التجنيد في المغرب أو الخدمة العسكرية في المغرب هو تجنيد إجباري للرجال المواطنين في المغرب من سن الثامنة عشر جرى إحداثه خلال حالة الاستثناء التي شهدها المغرب إبان حكم الملك الحسن الثاني بموجب مرسوم ملكي لسنة
  .1966"/>
             <TextView
+                android:id="@+id/text2"
+                android:visibility="invisible"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"

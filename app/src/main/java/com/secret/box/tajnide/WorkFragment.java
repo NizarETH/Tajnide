@@ -9,6 +9,8 @@ import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -32,6 +34,23 @@ public class WorkFragment extends android.support.v4.app.Fragment {
     private int[] layouts = {0,0,0,0,0,0,0,0,0,0,0};
     private List<ElementSwipe> elementSwipes;
 
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        if(((MainActivity)getActivity()) != null && ((MainActivity)getActivity()).getNavigation() != null)
+            ((MainActivity)getActivity()).getNavigation().getMenu().getItem(0).setChecked(true);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if(((MainActivity)getActivity()) != null && ((MainActivity)getActivity()).getNavigation() != null)
+            ((MainActivity)getActivity()).getNavigation().getMenu().getItem(0).setChecked(true);
+
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -39,7 +58,7 @@ public class WorkFragment extends android.support.v4.app.Fragment {
         view = inflater.inflate(R.layout.swipper_center_top_layout_smart, container, false);
 
         dotsLayout = (LinearLayout) view.findViewById(R.id.layoutDots);
-
+        ImageView ic_launcher_round = view.findViewById(R.id.ic_launcher_round);
 
 
         mViewPager = (ViewPager) view.findViewById(R.id.viewPager);
@@ -76,8 +95,14 @@ public class WorkFragment extends android.support.v4.app.Fragment {
         mViewPager.addOnPageChangeListener(viewPagerPageChangeListener);
 
 
+        Animation fadeInAnimation = AnimationUtils.loadAnimation(getActivity(), R.anim.fadein);
+       ic_launcher_round.setAnimation(fadeInAnimation);
+        view.findViewById(R.id.title1).setAnimation(fadeInAnimation);
 
-
+        view.findViewById(R.id.title2).setAnimation(fadeInAnimation);
+       view.findViewById(R.id.title1).setVisibility(View.VISIBLE);
+       view.findViewById(R.id.title2).setVisibility(View.VISIBLE);
+        ic_launcher_round.setVisibility(View.VISIBLE);
 
         return  view;
     }

@@ -1,5 +1,6 @@
 package com.secret.box.tajnide;
 
+import android.content.DialogInterface;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.CoordinatorLayout;
@@ -7,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.arch.lifecycle.ViewModelProviders;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -30,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements RewardedVideoAdLi
     private ActionBar toolbar;
     private RewardedVideoAd mRewardedVideoAd;
     private InterstitialAd mInterstitialAd;
+    public   BottomNavigationView navigation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,10 +43,10 @@ public class MainActivity extends AppCompatActivity implements RewardedVideoAdLi
         Fabric.with(this, new Crashlytics());
 
         toolbar = getSupportActionBar();
-        mViewModel = ViewModelProviders.of(this).get(DataViewModel.class);
 
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+         navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
 
         // attaching bottom sheet behaviour - hide / show on scroll
         CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams) navigation.getLayoutParams();
@@ -67,6 +70,15 @@ public class MainActivity extends AppCompatActivity implements RewardedVideoAdLi
 
 
     }
+
+    public BottomNavigationView getNavigation() {
+        return navigation;
+    }
+
+    public void setNavigation(BottomNavigationView navigation) {
+        this.navigation = navigation;
+    }
+
     @Override
     public void onPause() {
         super.onPause();
@@ -132,7 +144,7 @@ public class MainActivity extends AppCompatActivity implements RewardedVideoAdLi
                     return true;
 
                 case R.id.navigation_contact:
-                    toolbar.setTitle("الاتصال");
+                    toolbar.setTitle("اللائحة");
                     fragment = new ContactFragment();
                     loadFragment(fragment);
                     return true;
@@ -145,6 +157,7 @@ public class MainActivity extends AppCompatActivity implements RewardedVideoAdLi
     private void loadFragment(Fragment fragment) {
         // load fragment
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.setCustomAnimations(R.anim.slide_in_up, R.anim.slide_out_up);
         transaction.replace(R.id.frame_container, fragment);
         transaction.addToBackStack(null);
         transaction.commit();
@@ -188,5 +201,35 @@ public class MainActivity extends AppCompatActivity implements RewardedVideoAdLi
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
 
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        int fragments = getSupportFragmentManager().getBackStackEntryCount();
+        if (fragments == 1) {
+            final AlertDialog.Builder b = new AlertDialog.Builder(this);
+            b.setTitle("التجنيد الاجباري");
+
+            b.setMessage("هل تريد اغلاق التطبيق ؟");
+            b.setCancelable(false)
+                    .setPositiveButton("Oui", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            MainActivity.this.finish();
+                        }
+                    })
+                    .setNegativeButton("Non", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.cancel();
+                        }
+                    });
+            b.show();
+        } else {
+            if (getFragmentManager().getBackStackEntryCount() > 1) {
+                getFragmentManager().popBackStack();
+            } else {
+                super.onBackPressed();
+            }
+        }
     }
 }

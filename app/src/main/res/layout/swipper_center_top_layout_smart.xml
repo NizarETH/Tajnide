@@ -38,18 +38,22 @@
             android:layout_height="180dp"
             android:orientation="vertical" >
             <TextView
+                android:id="@+id/title1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:gravity="center"
+                android:visibility="invisible"
                 android:textSize="17sp"
                 android:textStyle="bold"
                 android:textColor="@color/pokerGreen"
                 android:text="مرحبا بكم في اول تطبيق للتجنيد الاجباري في المغرب."/>
             <TextView
+                android:id="@+id/title2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
+                android:visibility="invisible"
                 android:gravity="center"
                 android:textSize="14sp"
                 android:textStyle="normal"
@@ -57,6 +61,8 @@
                 android:text="يحتوي هذا التطبيق على جميع
  الاخبار والتساؤلات و الاستفسارات"/>
             <ImageView
+                android:id="@+id/ic_launcher_round"
+                android:visibility="invisible"
                 android:layout_marginTop="6dp"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"

@@ -1,6 +1,7 @@
 package com.secret.box.tajnide;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.view.ViewCompat;
@@ -8,42 +9,45 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.FrameLayout;
 
-public class BottomNavigationBehavior extends CoordinatorLayout.Behavior<BottomNavigationView> {
+public class BottomNavigationBehavior  extends CoordinatorLayout.Behavior<BottomNavigationView> {
 
-    public BottomNavigationBehavior() {
-        super();
-    }
+    private int height;
 
-    public BottomNavigationBehavior(Context context, AttributeSet attrs) {
-        super(context, attrs);
+    @Override
+    public boolean onLayoutChild(CoordinatorLayout parent, BottomNavigationView child, int layoutDirection) {
+        height = child.getHeight();
+        return super.onLayoutChild(parent, child, layoutDirection);
     }
 
     @Override
-    public boolean layoutDependsOn(CoordinatorLayout parent, BottomNavigationView child, View dependency) {
-        boolean dependsOn = dependency instanceof FrameLayout;
-        return dependsOn;
-    }
-    @Override
-    public boolean onStartNestedScroll(CoordinatorLayout coordinatorLayout, BottomNavigationView child, View directTargetChild, View target, int nestedScrollAxes, int type) {
-        return nestedScrollAxes == ViewCompat.SCROLL_AXIS_VERTICAL;
+    public boolean onStartNestedScroll(@NonNull CoordinatorLayout coordinatorLayout,
+                                       BottomNavigationView child, @NonNull
+                                               View directTargetChild, @NonNull View target,
+                                       int axes, int type)
+    {
+        return axes == ViewCompat.SCROLL_AXIS_VERTICAL;
     }
 
-
     @Override
-    public void onNestedPreScroll(CoordinatorLayout coordinatorLayout, BottomNavigationView child, View target, int dx, int dy, int[] consumed, int type) {
-        if (dy < 0) {
-            showBottomNavigationView(child);
-        } else if (dy > 0) {
-            hideBottomNavigationView(child);
+    public void onNestedScroll(@NonNull CoordinatorLayout coordinatorLayout, @NonNull BottomNavigationView child,
+                               @NonNull View target, int dxConsumed, int dyConsumed,
+                               int dxUnconsumed, int dyUnconsumed,
+                               @ViewCompat.NestedScrollType int type)
+    {
+        if (dyConsumed > 0) {
+            slideDown(child);
+        } else if (dyConsumed < 0) {
+            slideUp(child);
         }
     }
 
-
-    private void hideBottomNavigationView(BottomNavigationView view) {
-        view.animate().translationY(view.getHeight());
+    private void slideUp(BottomNavigationView child) {
+        child.clearAnimation();
+        child.animate().translationY(0).setDuration(200);
     }
 
-    private void showBottomNavigationView(BottomNavigationView view) {
-        view.animate().translationY(0);
+    private void slideDown(BottomNavigationView child) {
+        child.clearAnimation();
+        child.animate().translationY(height).setDuration(200);
     }
 }

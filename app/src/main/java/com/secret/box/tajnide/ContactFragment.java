@@ -12,13 +12,26 @@ import android.view.ViewGroup;
 public class ContactFragment extends android.support.v4.app.Fragment {
 
 
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        if(((MainActivity)getActivity()) != null && ((MainActivity)getActivity()).getNavigation() != null)
+            ((MainActivity)getActivity()).getNavigation().getMenu().getItem(4).setChecked(true);
+    }
+
     @Override
     public void onResume() {
         super.onResume();
+        if(((MainActivity)getActivity()) != null && ((MainActivity)getActivity()).getNavigation() != null)
+            ((MainActivity)getActivity()).getNavigation().getMenu().getItem(4).setChecked(true);
 
         if(getActivity() != null)
-        ((MainActivity)getActivity()).loadInterstitialAd();
+            ((MainActivity)getActivity()).loadInterstitialAd();
+
     }
+
 
     @Nullable
     @Override
@@ -27,7 +40,8 @@ public class ContactFragment extends android.support.v4.app.Fragment {
         View v = inflater.inflate(R.layout.contact_view, container, false);
 
         if(getActivity() != null)
-        ((MainActivity)getActivity()).loadInterstitialAd();
+            ((MainActivity)getActivity()).  showRewardedVideo();
+        //((MainActivity)getActivity()).loadInterstitialAd();
 
         v.findViewById(R.id.open_gmail).setOnClickListener(new View.OnClickListener() {
             @Override
