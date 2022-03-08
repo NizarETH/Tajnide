@@ -18,9 +18,9 @@ android {
     signingConfigs {
         releaseconfig {
             keyAlias 'release_key'
-            keyPassword 'nizar++.00'
+            keyPassword ' '
             storeFile file('C:\\Users\\lenovo\\AndroidStudioProjects\\Tajnide\\app\\release.keystore')
-            storePassword 'nizar++.00'
+            storePassword ' '
         }
     }
     buildTypes {
